@@ -1,0 +1,38 @@
+[
+    {
+        "name": "Back tucked",
+        "category": "Back",
+        "id": 1,
+        "value": 4
+    },
+    {
+        "name": "Back picked",
+        "category": "Back",
+        "id": 2,
+        "value": 5
+    },
+    {
+        "name": "Back straight",
+        "category": "Back",
+        "id": 3,
+        "value": 6
+    },
+    {
+        "name": "Front tucked",
+        "category": "Front",
+        "id": 4,
+        "value": 4
+    },
+    {
+        "name": "Front picked",
+        "category": "Front",
+        "id": 5,
+        "value": 5
+    },
+    {
+        "name": "Front straight",
+        "category": "Front",
+        "id": 6,
+        "value": 6
+    }
+]

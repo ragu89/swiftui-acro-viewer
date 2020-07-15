@@ -13,6 +13,8 @@
 		F765406224BF9C6100D10E24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F765406124BF9C6100D10E24 /* Assets.xcassets */; };
 		F765406524BF9C6100D10E24 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F765406424BF9C6100D10E24 /* Preview Assets.xcassets */; };
 		F765406824BF9C6100D10E24 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F765406624BF9C6100D10E24 /* LaunchScreen.storyboard */; };
+		F765407024BF9D5500D10E24 /* acros.json in Resources */ = {isa = PBXBuildFile; fileRef = F765406F24BF9D5500D10E24 /* acros.json */; };
+		F765407224BFA06500D10E24 /* Acro.swift in Sources */ = {isa = PBXBuildFile; fileRef = F765407124BFA06500D10E24 /* Acro.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		F765406424BF9C6100D10E24 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F765406724BF9C6100D10E24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F765406924BF9C6100D10E24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F765406F24BF9D5500D10E24 /* acros.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = acros.json; sourceTree = "<group>"; };
+		F765407124BFA06500D10E24 /* Acro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Acro.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 				F765406624BF9C6100D10E24 /* LaunchScreen.storyboard */,
 				F765406924BF9C6100D10E24 /* Info.plist */,
 				F765406324BF9C6100D10E24 /* Preview Content */,
+				F765406F24BF9D5500D10E24 /* acros.json */,
+				F765407124BFA06500D10E24 /* Acro.swift */,
 			);
 			path = AcrosViewer;
 			sourceTree = "<group>";
@@ -135,6 +141,7 @@
 			files = (
 				F765406824BF9C6100D10E24 /* LaunchScreen.storyboard in Resources */,
 				F765406524BF9C6100D10E24 /* Preview Assets.xcassets in Resources */,
+				F765407024BF9D5500D10E24 /* acros.json in Resources */,
 				F765406224BF9C6100D10E24 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -148,6 +155,7 @@
 			files = (
 				F765405C24BF9C5F00D10E24 /* AppDelegate.swift in Sources */,
 				F765405E24BF9C5F00D10E24 /* SceneDelegate.swift in Sources */,
+				F765407224BFA06500D10E24 /* Acro.swift in Sources */,
 				F765406024BF9C5F00D10E24 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
