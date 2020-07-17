@@ -19,18 +19,41 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             List(acros) { acro in
-                HStack {
-                    VStack {
-                        Text(acro.name)
-                        Text(acro.category)
-                            .font(.caption)
+                NavigationLink(destination: AcroDetailView(acro)) {
+                    HStack {
+                        VStack(alignment: .leading) {
+                            Text(acro.name)
+                            Text(acro.category)
+                                .font(.caption)
+                        }
+                        Spacer()
+                        Text(String(acro.value))
+                        Text("pt.")
                     }
-                    Spacer()
-                    Text(String(acro.value))
-                    Text("pt.")
                 }
             }
             .navigationBarTitle("Acros Viewer")
+        }
+    }
+}
+
+struct AcroDetailView: View {
+    
+    let acro: Acro
+    
+    init(_ acro: Acro) {
+        self.acro = acro
+    }
+    
+    var body: some View {
+        VStack(alignment: .center, spacing: 16) {
+            Spacer()
+            Text(acro.category).font(.subheadline)
+            Text(acro.name).font(.headline)
+            Text(String(acro.value)).font(.subheadline)
+            Spacer()
+            Spacer()
+            Spacer()
         }
     }
 }
