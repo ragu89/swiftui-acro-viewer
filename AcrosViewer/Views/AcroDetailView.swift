@@ -19,7 +19,7 @@ struct AcroDetailView: View {
     var body: some View {
         VStack(alignment: .center, spacing: 16) {
             Spacer()
-            Text(acro.category).font(.subheadline)
+            Text(acro.group).font(.subheadline)
             Text(acro.name).font(.headline)
             Text(String(acro.value)).font(.subheadline)
             Spacer()
@@ -32,6 +32,6 @@ struct AcroDetailView: View {
 
 struct AcroDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        AcroDetailView(Acro(id: 1, name: "tuck", category: "back", value: 4))
+        AcroDetailView(Acro(id: 1, group: "tuck", category: "back", value: 4))
     }
 }

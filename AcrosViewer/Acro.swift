@@ -10,7 +10,20 @@ import Foundation
 
 struct Acro : Identifiable {
     var id: Int
-    var name: String
+    var customName: String?
+    var group: String
     var category: String
+    var numberTwist: Double = 0
     var value: Int
+    
+    var name: String {
+        get {
+            if (customName != nil) {
+                return customName!
+            } else {
+                let basicName = category
+                return numberTwist == 0 ? basicName : basicName + " with \(numberTwist) twist"
+            }
+        }
+    }
 }

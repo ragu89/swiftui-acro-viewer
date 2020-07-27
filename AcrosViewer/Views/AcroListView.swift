@@ -11,9 +11,17 @@ import SwiftUI
 struct AcroListView: View {
     
     var acros: [Acro] = [
-        Acro(id: 1, name: "tuck", category: "back", value: 4),
-        Acro(id: 2, name: "pick", category: "back", value: 5),
-        Acro(id: 3, name: "straight", category: "back", value: 6),
+    Acro(id: 1, group: "back", category: "tuck", value: 4),
+    Acro(id: 2, group: "back", category: "pick", value: 5),
+    Acro(id: 3, group: "back", category: "straight", value: 6),
+    Acro(id: 4, group: "back", category: "straight", numberTwist: 0.5, value: 7),
+    Acro(id: 5, group: "back", category: "straight", numberTwist: 1, value: 8),
+    Acro(id: 6, group: "front", category: "tuck", value: 4),
+    Acro(id: 7, group: "front", category: "pick", value: 5),
+    Acro(id: 8, group: "front", category: "straight", value: 6),
+    Acro(id: 9, group: "front", category: "straight", numberTwist: 0.5, value: 7),
+    Acro(id: 10, group: "front", category: "straight", numberTwist: 1, value: 8),
+    //TODO: Add the acro 'twist before salto' with custom name
     ]
     
     var body: some View {
@@ -22,7 +30,7 @@ struct AcroListView: View {
                 HStack {
                     VStack(alignment: .leading) {
                         Text(acro.name)
-                        Text(acro.category)
+                        Text(acro.group)
                             .font(.caption)
                     }
                     Spacer()
