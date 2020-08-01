@@ -10,8 +10,8 @@ import Foundation
 
 struct Acro : Identifiable {
     var id: Int
-    var customName: String?
     var group: String
+    var customName: String?
     var category: String
     var numberTwist: Double = 0
     var value: Int

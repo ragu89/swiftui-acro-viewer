@@ -21,7 +21,9 @@ struct AcroListView: View {
     Acro(id: 8, group: "front", category: "straight", value: 6),
     Acro(id: 9, group: "front", category: "straight", numberTwist: 0.5, value: 7),
     Acro(id: 10, group: "front", category: "straight", numberTwist: 1, value: 8),
-    //TODO: Add the acro 'twist before salto' with custom name
+    Acro(id: 11, group: "front", customName: "1/2 turn front tucked", category: "tuck", numberTwist: 0.5, value: 6),
+    Acro(id: 12, group: "pick", customName: "1/2 turn front picked", category: "tuck", numberTwist: 0.5, value: 7),
+    Acro(id: 13, group: "straight", customName: "1/2 turn front straight", category: "tuck", numberTwist: 0.5, value: 8),
     ]
     
     var body: some View {
