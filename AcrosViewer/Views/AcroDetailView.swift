@@ -21,7 +21,7 @@ struct AcroDetailView: View {
             Spacer()
             Text(acro.group).font(.subheadline)
             Text(acro.name).font(.headline)
-            Text(String(acro.value)).font(.subheadline)
+            Text(String(acro.value) + " points").font(.subheadline)
             Spacer()
             Spacer()
             Spacer()
@@ -32,6 +32,6 @@ struct AcroDetailView: View {
 
 struct AcroDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        AcroDetailView(Acro(id: 1, group: "tuck", category: "back", value: 4))
+        AcroDetailView(Acro(id: 1, group: "tucked", position: "back", value: 4))
     }
 }

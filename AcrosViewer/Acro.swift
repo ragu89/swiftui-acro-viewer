@@ -12,7 +12,7 @@ struct Acro : Identifiable {
     var id: Int
     var group: String
     var customName: String?
-    var category: String
+    var position: String
     var numberTwist: Double = 0
     var value: Int
     
@@ -21,7 +21,7 @@ struct Acro : Identifiable {
             if (customName != nil) {
                 return customName!
             } else {
-                let basicName = category
+                let basicName = position
                 return numberTwist == 0 ? basicName : basicName + " with \(numberTwist) twist"
             }
         }
