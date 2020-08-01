@@ -13,6 +13,15 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             AcroListView()
+            .navigationBarItems(trailing: filterButton())
+        }
+    }
+    
+    private func filterButton() -> some View {
+        return Button(action: {
+            NSLog("clicked")
+        }) {
+            Image(systemName: "line.horizontal.3.decrease.circle")
         }
     }
 }

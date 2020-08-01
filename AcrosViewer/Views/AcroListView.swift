@@ -41,7 +41,7 @@ struct AcroListView: View {
                 }
             }
         }
-        .navigationBarTitle("Acros Viewer")
+        .navigationBarTitle("Acros Viewer", displayMode: .inline)
     }
 }
 

@@ -21,12 +21,13 @@ struct AcroDetailView: View {
             Spacer()
             Text(acro.group).font(.subheadline)
             Text(acro.name).font(.headline)
+//            Text("Nb of twist(s): " + acro.numberTwist).font(.headline)
             Text(String(acro.value) + " points").font(.subheadline)
             Spacer()
             Spacer()
             Spacer()
         }
-        .navigationBarTitle("Acro detail view", displayMode: .inline)
+        .navigationBarTitle("Acro detail", displayMode: .inline)
     }
 }
 
