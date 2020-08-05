@@ -17,7 +17,7 @@ struct ContentView: View {
             AcroListView()
             .navigationBarItems(trailing: filterButton())
             .sheet(isPresented: $isFilterDisplayed) {
-                self.filterPage()
+                FilterView(isFilterDisplayed: self.$isFilterDisplayed)
             }
         }
     }
@@ -27,22 +27,6 @@ struct ContentView: View {
             self.isFilterDisplayed = true
         }) {
             Image(systemName: "line.horizontal.3.decrease.circle")
-        }
-    }
-    
-    private func filterPage() -> some View {
-        return NavigationView {
-            Text("This is the filter page")
-                .navigationBarTitle("Filter", displayMode: .inline)
-                .navigationBarItems(trailing: doneButton())
-        }
-    }
-    
-    private func doneButton() -> some View {
-        return Button(action: {
-            self.isFilterDisplayed = false
-        }) {
-            Text("Done")
         }
     }
 }
