@@ -10,7 +10,7 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State var isFilterDisplayed = false
+    @State  var isFilterDisplayed = false
     
     var body: some View {
         NavigationView {
