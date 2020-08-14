@@ -11,10 +11,10 @@ import SwiftUI
 struct FilterView: View {
     
     @Binding public var isFilterDisplayed: Bool
-    @ObservedObject fileprivate var groupBackSelector = GroupSelectorModel(text: "Back", action: { })
-    @ObservedObject fileprivate var groupFrontSelector = GroupSelectorModel(text: "Front", action: {})
-    @ObservedObject fileprivate var groupDiveSelector = GroupSelectorModel(text: "Dive", action: {})
-    @ObservedObject fileprivate var groupRotationSelector = GroupSelectorModel(text: "Rotation", action: {})
+    private let groupBackSelector = GroupSelectorModel(text: "Back", action: { })
+    private let groupFrontSelector = GroupSelectorModel(text: "Front", action: {})
+    private let groupDiveSelector = GroupSelectorModel(text: "Dive", action: {})
+    private let groupRotationSelector = GroupSelectorModel(text: "Rotation", action: {})
     
     var body: some View {
         NavigationView {
@@ -32,43 +32,13 @@ struct FilterView: View {
     fileprivate func groupSelector() -> some View {
         return VStack(alignment: .center, spacing: 10) {
             HStack {
-                Button(action:{ self.groupBackSelector.isSelected.toggle() }, label: {
-                    Text(groupBackSelector.text)
-                        .foregroundColor(self.groupBackSelector.isSelected ? Color.white : Color.accentColor)
-                        .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/, /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
-                })
-                    .frame(width: 150, height: 50, alignment: .center)
-                    .border(Color.accentColor, width: 1)
-                    .background(self.groupBackSelector.isSelected ? Color.accentColor : Color.white)
-                
-                Button(action: { self.groupFrontSelector.isSelected.toggle() }, label: {
-                    Text(groupFrontSelector.text)
-                        .foregroundColor(self.groupFrontSelector.isSelected ? Color.white : Color.accentColor)
-                        .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/, /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
-                })
-                    .frame(width: 150, height: 50, alignment: .center)
-                    .border(Color.accentColor, width: 1)
-                    .background(self.groupFrontSelector.isSelected ? Color.accentColor : Color.white)
+                GroupSelectorButton(groupSelector: self.groupBackSelector)
+                GroupSelectorButton(groupSelector: self.groupFrontSelector)
             }
             
             HStack {
-                Button(action: { self.groupDiveSelector.isSelected.toggle() }, label: {
-                    Text(groupDiveSelector.text)
-                        .foregroundColor(self.groupDiveSelector.isSelected ? Color.white : Color.accentColor)
-                        .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/, /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
-                })
-                    .frame(width: 150, height: 50, alignment: .center)
-                    .border(Color.accentColor, width: 1)
-                    .background(self.groupDiveSelector.isSelected ? Color.accentColor : Color.white)
-                
-                Button(action:{ self.groupRotationSelector.isSelected.toggle() }, label: {
-                    Text(groupRotationSelector.text)
-                        .foregroundColor(self.groupRotationSelector.isSelected ? Color.white : Color.accentColor)
-                        .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/, /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
-                })
-                    .frame(width: 150, height: 50, alignment: .center)
-                    .border(Color.accentColor, width: 1)
-                    .background(self.groupRotationSelector.isSelected ? Color.accentColor : Color.white)
+                GroupSelectorButton(groupSelector: self.groupDiveSelector)
+                GroupSelectorButton(groupSelector: self.groupRotationSelector)
             }
         }
     }
@@ -82,15 +52,15 @@ struct FilterView: View {
     }
 }
 
-fileprivate class GroupSelectorModel: ObservableObject {
+class GroupSelectorModel: ObservableObject {
     var text: String
     var action: () -> Void
     @Published public var isSelected: Bool
     
-    init(text: String, action: @escaping () -> Void) {
+    init(text: String, action: @escaping () -> Void, isSelected: Bool = false) {
         self.text = text
         self.action = action
-        self.isSelected = false
+        self.isSelected = isSelected
     }
 }
 

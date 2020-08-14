@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F701F06D24DAA1F200251BCF /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F701F06C24DAA1F200251BCF /* FilterView.swift */; };
+		F712207324E737D80071757E /* GroupSelectorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F712207224E737D80071757E /* GroupSelectorButton.swift */; };
 		F765405C24BF9C5F00D10E24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F765405B24BF9C5F00D10E24 /* AppDelegate.swift */; };
 		F765405E24BF9C5F00D10E24 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F765405D24BF9C5F00D10E24 /* SceneDelegate.swift */; };
 		F765406024BF9C5F00D10E24 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F765405F24BF9C5F00D10E24 /* ContentView.swift */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		F701F06C24DAA1F200251BCF /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
+		F712207224E737D80071757E /* GroupSelectorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupSelectorButton.swift; sourceTree = "<group>"; };
 		F765405824BF9C5F00D10E24 /* AcrosViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AcrosViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F765405B24BF9C5F00D10E24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F765405D24BF9C5F00D10E24 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +49,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F712207124E737B50071757E /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				F712207224E737D80071757E /* GroupSelectorButton.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		F765404F24BF9C5F00D10E24 = {
 			isa = PBXGroup;
 			children = (
@@ -66,6 +76,7 @@
 		F765405A24BF9C5F00D10E24 /* AcrosViewer */ = {
 			isa = PBXGroup;
 			children = (
+				F712207124E737B50071757E /* Components */,
 				F795E9F624CF452D002764FD /* Views */,
 				F765405B24BF9C5F00D10E24 /* AppDelegate.swift */,
 				F765405D24BF9C5F00D10E24 /* SceneDelegate.swift */,
@@ -176,6 +187,7 @@
 				F765405E24BF9C5F00D10E24 /* SceneDelegate.swift in Sources */,
 				F795E9F824CF457A002764FD /* AcroDetailView.swift in Sources */,
 				F765407224BFA06500D10E24 /* Acro.swift in Sources */,
+				F712207324E737D80071757E /* GroupSelectorButton.swift in Sources */,
 				F765406024BF9C5F00D10E24 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
