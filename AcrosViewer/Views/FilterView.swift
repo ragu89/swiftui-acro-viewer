@@ -11,21 +11,60 @@ import SwiftUI
 struct FilterView: View {
     
     @Binding public var isFilterDisplayed: Bool
+    @State private var hasTwist = false
+    @State private var roundIdSelected = 0
     private let groupBackSelector = GroupSelectorModel(text: "Back", action: { })
     private let groupFrontSelector = GroupSelectorModel(text: "Front", action: {})
     private let groupDiveSelector = GroupSelectorModel(text: "Dive", action: {})
     private let groupRotationSelector = GroupSelectorModel(text: "Rotation", action: {})
     
+    init(isFilterDisplayed: Binding<Bool>) {
+        self._isFilterDisplayed = isFilterDisplayed
+        UISegmentedControl.appearance().selectedSegmentTintColor = UIView().tintColor
+        UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
+        UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIView().tintColor!], for: .normal)
+    }
+    
     var body: some View {
         NavigationView {
-            VStack() {
+            Form {
                 
-                groupSelector()
-                .navigationBarTitle("Filter", displayMode: .inline)
-                .navigationBarItems(trailing: self.doneButton())
+                Section() {
+                    
+                    VStack {
+
+                        Picker(selection: $roundIdSelected, label: Text("Round")) {
+                            Text("Qualifications").tag(0)
+                            Text("Finals round").tag(1)
+                        }
+                        .pickerStyle(SegmentedPickerStyle())
+                        .padding(.top, 20)
+                        .padding(.leading, 15)
+                        .padding(.trailing, 15)
+                        
+                        HStack {
+                            Spacer()
+                            groupSelector()
+                                .navigationBarTitle("Filter", displayMode: .inline)
+                                .navigationBarItems(trailing: self.doneButton())
+                                .padding(.top, 20)
+                                .padding(.bottom, 20)
+                            Spacer()
+                        }
+                        }
+                }
                 
-                Spacer()
-            }.padding(.top, 20)
+                Section() {
+                    Toggle(isOn: $hasTwist) {
+                        Text("Acros containing twists")
+                    }
+                }
+                
+                Section(header: Text("Number of points")) {
+                    Text("todo")
+                }
+            }
+            .buttonStyle(BorderlessButtonStyle())
         }
     }
     
